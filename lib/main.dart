@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'DeliMeals',
       theme: ThemeData(
         primarySwatch: Colors.pink,
+        primaryColor: Colors.orange,
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
@@ -34,6 +35,13 @@ class MyApp extends StatelessWidget {
         '/': (ctx) => const CategoriesScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      // onGenerateRoute: (settings){
+      //   // print(settings.arguments);
+      //   // return MaterialPageRoute(builder: (ctx) => CategoriesScreen(),);
+      // },
+      onUnknownRoute: (settings){
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen(),);
       },
     );
   }
