@@ -1,4 +1,5 @@
 import 'package:deli_meals/screens/favorites_screen.dart';
+import 'package:deli_meals/widgets/main_drawer.dart';
 
 import './categories_screen.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title'] as String),
       ),
+      drawer: const MainDrawer(),
       body: _pages[_selectedPageIndex]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).primaryColor,
