@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.pink
         ),
         scaffoldBackgroundColor: Colors.white70,
-        primarySwatch: Colors.pink,
-        primaryColor: Colors.orange,
+        // primarySwatch: Colors.pink,
+        primaryColor: Colors.pink,
+        primaryColorDark: Colors.black54,
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
