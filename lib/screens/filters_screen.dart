@@ -1,4 +1,4 @@
-import 'package:deli_meals/widgets/main_drawer.dart';
+import '../widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 
 class FiltersScreen extends StatefulWidget {
@@ -6,7 +6,12 @@ class FiltersScreen extends StatefulWidget {
 
   final Function saveFilters;
   final Map<String, bool> currentFilter;
-  const FiltersScreen({super.key,required this.currentFilter , required this.saveFilters});
+
+  const FiltersScreen({
+    super.key,
+    required this.currentFilter,
+    required this.saveFilters,
+  });
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
@@ -18,6 +23,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   var _vegan = false;
   var _lactoseFree = false;
 
+  //initializing the filters that we set for keep the sate of the screen
   @override
   void initState() {
     _glutenFree = widget.currentFilter['gluten']!;
@@ -27,9 +33,12 @@ class _FiltersScreenState extends State<FiltersScreen> {
     super.initState();
   }
 
+  //A builder methode for creating filtering tiles
   Widget _buildSwitchListTile(String title, String description,
       bool currentValue, Function(bool value) updateValue) {
     return SwitchListTile(
+      activeColor: Theme.of(context).primaryColor,
+      thumbColor: MaterialStateProperty.all(Colors.black),
       value: currentValue,
       title: Text(title),
       subtitle: Text(description),
@@ -41,24 +50,27 @@ class _FiltersScreenState extends State<FiltersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Filters'),
+        title: const Text('Your Filters'),
         actions: [
-          IconButton(onPressed: (){
-            final selectedFilters = {
-              'gluten': _glutenFree,
-              'lactose': _lactoseFree,
-              'vegan': _vegan,
-              'vegetarian': _vegetarian,
-            };
-            widget.saveFilters(selectedFilters);
-          }, icon: Icon(Icons.save),),
+          IconButton(
+            onPressed: () {
+              final selectedFilters = {
+                'gluten': _glutenFree,
+                'lactose': _lactoseFree,
+                'vegan': _vegan,
+                'vegetarian': _vegetarian,
+              };
+              widget.saveFilters(selectedFilters);
+            },
+            icon: const Icon(Icons.save, color: Colors.white,),
+          ),
         ],
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Text(
               'Adjust your meal selection.',
               style: Theme.of(context).textTheme.titleMedium,
@@ -77,6 +89,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     });
                   },
                 ),
+                const Divider(),
                 _buildSwitchListTile(
                   'Lactose-free',
                   'Only include lactose-free meals.',
@@ -87,21 +100,23 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     });
                   },
                 ),
+                const Divider(),
                 _buildSwitchListTile(
                   'Vegetarian',
                   'Only include vegetarian meals.',
                   _vegetarian,
-                      (value) {
+                  (value) {
                     setState(() {
                       _vegetarian = value;
                     });
                   },
                 ),
+                const Divider(),
                 _buildSwitchListTile(
                   'Vegan',
                   'Only include Vegan meals.',
                   _vegan,
-                      (value) {
+                  (value) {
                     setState(() {
                       _vegan = value;
                     });

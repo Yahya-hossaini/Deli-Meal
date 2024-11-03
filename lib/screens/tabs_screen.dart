@@ -22,7 +22,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   void initState() {
     _pages = [
-      {'page': CategoriesScreen(), 'title': 'Categories'},
+      {'page': const CategoriesScreen(), 'title': 'Categories'},
       {'page': FavoritesScreen(favoriteMeals: widget.favoriteMeals,), 'title': 'Your Favorites'},
     ];
     super.initState();
@@ -52,12 +52,12 @@ class _TabsScreenState extends State<TabsScreen> {
         items: [
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
-            icon: Icon(Icons.category),
+            icon: const Icon(Icons.category),
             label: 'Categories',
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
-            icon: Icon(Icons.star),
+            icon: const Icon(Icons.star),
             label: 'Favorites',
           ),
         ],

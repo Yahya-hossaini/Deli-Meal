@@ -8,9 +8,11 @@ import 'package:flutter/material.dart';
 
 import 'models/meal.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -23,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     'vegetarian': false,
   };
   List<Meal> _availableMeals = DUMMY_MEALS;
-  List<Meal> _favoriteMeals = [];
+  final List<Meal> _favoriteMeals = [];
 
   void _setFilters(Map<String, bool> filtersData){
     setState(() {
@@ -104,7 +106,7 @@ class _MyAppState extends State<MyApp> {
       //   // return MaterialPageRoute(builder: (ctx) => CategoriesScreen(),);
       // },
       onUnknownRoute: (settings){
-        return MaterialPageRoute(builder: (ctx) => CategoriesScreen(),);
+        return MaterialPageRoute(builder: (ctx) => const CategoriesScreen(),);
       },
     );
   }

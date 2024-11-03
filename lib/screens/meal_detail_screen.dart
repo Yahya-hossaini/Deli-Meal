@@ -31,8 +31,8 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey),
       ),
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       height: 200,
       child: child,
     );
@@ -51,7 +51,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
+            SizedBox(
               height: 300,
               width: double.infinity,
               child: Image.network(selectedMeal.imageUrl, fit: BoxFit.cover),

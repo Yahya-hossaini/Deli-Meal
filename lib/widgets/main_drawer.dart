@@ -1,6 +1,8 @@
 import 'package:deli_meals/screens/filters_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../styles.dart';
+
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
 
@@ -12,11 +14,7 @@ class MainDrawer extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: TextStyle(
-          fontFamily: 'RobotoCondensed',
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-        ),
+        style: kDrawerOptionsTextStyle,
       ),
       onTap: tabHandler,
     );
@@ -30,19 +28,15 @@ class MainDrawer extends StatelessWidget {
           Container(
             height: 120,
             width: double.infinity,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             alignment: Alignment.centerLeft,
             color: Theme.of(context).primaryColorLight,
-            child: Text(
+            child: const Text(
               'Cooking Up!',
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 30,
-                color: Theme.of(context).primaryColor,
-              ),
+              style: kMainDrawerTitleTextStyle,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           buildListTile(

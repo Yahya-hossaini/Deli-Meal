@@ -1,7 +1,5 @@
-
-import 'package:deli_meals/widgets/meal_item.dart';
+import '../widgets/meal_item.dart';
 import 'package:flutter/material.dart';
-
 import '../models/meal.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
@@ -25,6 +23,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     super.initState();
   }
 
+  //Checks if any state or data has been changed after filtering, and if it is, it will load them before build method
   @override
   void didChangeDependencies() {
       final routeArgs =
@@ -38,11 +37,11 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     super.didChangeDependencies();
   }
 
-  void _removeMeal(String mealId){
-    setState(() {
-      displayedMeal?.removeWhere((meal) => meal.id == mealId);
-    });
-  }
+  // void _removeMeal(String mealId){
+  //   setState(() {
+  //     displayedMeal?.removeWhere((meal) => meal.id == mealId);
+  //   });
+  // }
 
   // final String categoryId;
   @override
