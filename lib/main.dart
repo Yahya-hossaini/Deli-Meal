@@ -74,6 +74,7 @@ class _MyAppState extends State<MyApp> {
         // primarySwatch: Colors.pink,
         primaryColor: Colors.pink,
         primaryColorDark: Colors.black54,
+        primaryColorLight: Colors.orangeAccent,
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(

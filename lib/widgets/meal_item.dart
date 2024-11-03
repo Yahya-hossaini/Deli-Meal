@@ -71,7 +71,7 @@ class MealItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         elevation: 4,
-        margin: const EdgeInsets.all(4),
+        margin: const EdgeInsets.all(8),
         child: Column(
           children: <Widget>[
             Stack(
@@ -92,8 +92,11 @@ class MealItem extends StatelessWidget {
                   bottom: 20,
                   right: 10,
                   child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.black54,
+                    ),
                     width: 220,
-                    color: Colors.black54,
                     padding: const EdgeInsets.symmetric(
                       vertical: 5,
                       horizontal: 20,

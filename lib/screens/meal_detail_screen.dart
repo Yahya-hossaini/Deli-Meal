@@ -61,7 +61,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
               ListView.builder(
                 itemCount: selectedMeal.ingredients.length,
                 itemBuilder: (ctx, index) => Card(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).primaryColorLight,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 5,
@@ -80,6 +80,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                   children: [
                     ListTile(
                       leading: CircleAvatar(
+                        backgroundColor: Theme.of(context).primaryColor,
                         child: Text('# ${(index + 1)}'),
                       ),
                       title: Text(selectedMeal.steps[index]),

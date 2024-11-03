@@ -32,7 +32,7 @@ class MainDrawer extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.all(20),
             alignment: Alignment.centerLeft,
-            color: Theme.of(context).primaryColorDark,
+            color: Theme.of(context).primaryColorLight,
             child: Text(
               'Cooking Up!',
               style: TextStyle(
